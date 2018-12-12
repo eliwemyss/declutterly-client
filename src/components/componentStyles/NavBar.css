@@ -1,0 +1,23 @@
+nav{
+  position: fixed;
+  color: white;
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  height: 100px;
+  background-color: #232323;
+}
+.navbar h1{
+  margin-left: 10px;
+  width: 80%;
+  display: inline-flex;
+  white-space: nowrap;
+}
+.navbar li{
+display: inline-block;
+padding-right: 10px;
+
+}
+.navbar ul {
+  float:right;
+}

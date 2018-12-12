@@ -1,5 +1,5 @@
 import React from "react";
-
+import './componentStyles/NavBar.css';
 
 export default class NavBar extends React.Component {
 
@@ -10,12 +10,12 @@ export default class NavBar extends React.Component {
       <nav className="navbar">
     <h1>Declutterly</h1>
         <ul className="nav navbar-nav"> 
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./main.html">App</a></li>
+          <li>Home</li>
+          <li>App</li>
         </ul>
     </nav>
     )
   }
-
 }
+
 
