@@ -1,4 +1,5 @@
 import React from "react";
+import { Link, Redirect } from 'react-router-dom';
 import './componentStyles/NavBar.css';
 
 export default class NavBar extends React.Component {
@@ -8,10 +9,9 @@ export default class NavBar extends React.Component {
 
     return(
       <nav className="navbar">
-    <h1>Declutterly</h1>
         <ul className="nav navbar-nav"> 
-          <li>Home</li>
-          <li>App</li>
+          <Link className="navLink" to="/login">Login</Link>
+          <Link className="navLink" to="/registration">Register</Link>
         </ul>
     </nav>
     )

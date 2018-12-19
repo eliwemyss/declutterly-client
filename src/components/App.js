@@ -1,18 +1,26 @@
-import React from 'react';
-
+import React, { Component } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './NavBar';
-import InventoryForm from './InventoryForm';
+import Hero from './Hero';
+import Login from './Login';
+import Registration from './Registration';
+import Landing from './Landing';
 import Inventory from './Inventory';
 
 
-export default class App extends React.Component {
-render() {
-  return(
-    <div>
-      <NavBar />
-      <InventoryForm />
-      <Inventory />
-    </div>
-    )
+export default class App extends Component {
+  render() {
+      return (
+        <Router>
+          <div>
+            <NavBar />
+            <Hero />
+            <Landing />
+
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/registration" component={Registration} />
+          </div>
+        </Router>
+      )
+    }
   }
-}

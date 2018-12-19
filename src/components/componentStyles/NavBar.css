@@ -4,7 +4,6 @@ nav{
   left: 0px;
   top: 0px;
   right: 0px;
-  height: 100px;
   background-color: #232323;
 }
 .navbar h1{
@@ -13,7 +12,7 @@ nav{
   display: inline-flex;
   white-space: nowrap;
 }
-.navbar li{
+.navLink{
 display: inline-block;
 padding-right: 10px;
 
