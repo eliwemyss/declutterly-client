@@ -1,0 +1,111 @@
+    /*
+    Flaticon icon font: Flaticon
+    Creation date: 28/11/2018 08:37
+    */
+
+    @font-face {
+  font-family: "Flaticon";
+  src: url("./Flaticon.eot");
+  src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
+       url("./Flaticon.woff") format("woff"),
+       url("./Flaticon.ttf") format("truetype"),
+       url("./Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("./Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+    .fi:before{
+        display: inline-block;
+  font-family: "Flaticon";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+    }
+
+    .flaticon-001-bin:before { content: "\f100"; }
+.flaticon-002-bucket:before { content: "\f101"; }
+.flaticon-003-car-wash:before { content: "\f102"; }
+.flaticon-004-detergent:before { content: "\f103"; }
+.flaticon-005-dishes:before { content: "\f104"; }
+.flaticon-006-dry:before { content: "\f105"; }
+.flaticon-007-blower:before { content: "\f106"; }
+.flaticon-008-dusting:before { content: "\f107"; }
+.flaticon-009-dustpan:before { content: "\f108"; }
+.flaticon-010-mop:before { content: "\f109"; }
+.flaticon-011-garbage:before { content: "\f10a"; }
+.flaticon-012-garbage-1:before { content: "\f10b"; }
+.flaticon-013-garbage-2:before { content: "\f10c"; }
+.flaticon-014-glass:before { content: "\f10d"; }
+.flaticon-015-gloves:before { content: "\f10e"; }
+.flaticon-016-hand-dryer:before { content: "\f10f"; }
+.flaticon-017-gloves-1:before { content: "\f110"; }
+.flaticon-018-gloves-2:before { content: "\f111"; }
+.flaticon-019-hose:before { content: "\f112"; }
+.flaticon-020-laundry:before { content: "\f113"; }
+.flaticon-021-lawn-mower:before { content: "\f114"; }
+.flaticon-022-plunger:before { content: "\f115"; }
+.flaticon-023-shoe:before { content: "\f116"; }
+.flaticon-024-sponge:before { content: "\f117"; }
+.flaticon-025-iron:before { content: "\f118"; }
+.flaticon-026-sweep:before { content: "\f119"; }
+.flaticon-027-toilet:before { content: "\f11a"; }
+.flaticon-028-toilet-1:before { content: "\f11b"; }
+.flaticon-029-towels:before { content: "\f11c"; }
+.flaticon-030-trash-bin:before { content: "\f11d"; }
+.flaticon-031-vacuum:before { content: "\f11e"; }
+.flaticon-032-warning:before { content: "\f11f"; }
+.flaticon-033-wash:before { content: "\f120"; }
+.flaticon-034-washing-machine:before { content: "\f121"; }
+.flaticon-035-wiper:before { content: "\f122"; }
+.flaticon-036-wipe:before { content: "\f123"; }
+    
+    $font-Flaticon-001-bin: "\f100";
+    $font-Flaticon-002-bucket: "\f101";
+    $font-Flaticon-003-car-wash: "\f102";
+    $font-Flaticon-004-detergent: "\f103";
+    $font-Flaticon-005-dishes: "\f104";
+    $font-Flaticon-006-dry: "\f105";
+    $font-Flaticon-007-blower: "\f106";
+    $font-Flaticon-008-dusting: "\f107";
+    $font-Flaticon-009-dustpan: "\f108";
+    $font-Flaticon-010-mop: "\f109";
+    $font-Flaticon-011-garbage: "\f10a";
+    $font-Flaticon-012-garbage-1: "\f10b";
+    $font-Flaticon-013-garbage-2: "\f10c";
+    $font-Flaticon-014-glass: "\f10d";
+    $font-Flaticon-015-gloves: "\f10e";
+    $font-Flaticon-016-hand-dryer: "\f10f";
+    $font-Flaticon-017-gloves-1: "\f110";
+    $font-Flaticon-018-gloves-2: "\f111";
+    $font-Flaticon-019-hose: "\f112";
+    $font-Flaticon-020-laundry: "\f113";
+    $font-Flaticon-021-lawn-mower: "\f114";
+    $font-Flaticon-022-plunger: "\f115";
+    $font-Flaticon-023-shoe: "\f116";
+    $font-Flaticon-024-sponge: "\f117";
+    $font-Flaticon-025-iron: "\f118";
+    $font-Flaticon-026-sweep: "\f119";
+    $font-Flaticon-027-toilet: "\f11a";
+    $font-Flaticon-028-toilet-1: "\f11b";
+    $font-Flaticon-029-towels: "\f11c";
+    $font-Flaticon-030-trash-bin: "\f11d";
+    $font-Flaticon-031-vacuum: "\f11e";
+    $font-Flaticon-032-warning: "\f11f";
+    $font-Flaticon-033-wash: "\f120";
+    $font-Flaticon-034-washing-machine: "\f121";
+    $font-Flaticon-035-wiper: "\f122";
+    $font-Flaticon-036-wipe: "\f123";

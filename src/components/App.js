@@ -5,7 +5,7 @@ import Hero from './Hero';
 import Login from './Login';
 import Registration from './Registration';
 import Landing from './Landing';
-import Inventory from './Inventory';
+import Dashboard from './Dashboard';
 
 
 export default class App extends Component {
@@ -15,8 +15,9 @@ export default class App extends Component {
           <div>
             <NavBar />
             <Hero />
-            <Landing />
+            // <Landing />
 
+            <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/registration" component={Registration} />
           </div>
