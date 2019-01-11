@@ -13,10 +13,16 @@ nav{
   white-space: nowrap;
 }
 .navLink{
-display: inline-block;
-padding-right: 10px;
-
+  display: inline-block;
+  padding-right: 10px;
+  color: white;
+  text-decoration: none;
 }
+
+.navLink:hover {
+  color: orange;
+}
+
 .navbar ul {
   float:right;
 }

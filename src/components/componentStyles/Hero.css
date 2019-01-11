@@ -1,6 +1,6 @@
 .hero-section {
-    background: url('hero-img.jpg');
-    background-repeat: no-repeat;
+/*    background: url('hero-img.jpg');
+*/    background-repeat: no-repeat;
     background-size: cover;
     height: 99vh;
     width: 100%;

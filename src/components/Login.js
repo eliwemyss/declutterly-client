@@ -1,33 +1,56 @@
-import React from 'react';
-import './componentStyles/Login.css';
+import React, { Component } from 'react';
+import styles from './componentStyles/Login.css';
 
-export default class Login extends React.Component{
-	constructor(props) {
-		super(props)
-			this.state = {
-				username: '',
-				password: ''
-			}
-			this.handleSubmit = this.handleSubmit.bind(this)
-	}
+class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            newAccountForm: false
+        };
+    }
 
-	hanldeInput(event, key) {
-		this.setState({
-			[key]: event.target.value
-		})
-	}
-	handleSubmit(event) {
-		event.preventDefault();
-	}
-	render() {
-		return(
-            	<form className="container">
-              		<label>Username</label>
-              			<input type="text" placeholder="Username"></input>
-              		<label>Password</label>
-              			<input type="password" placeholder="password"></input>
-              		<button className="loginbtn" type="submit">Submit</button>
-            	</form>
-			)
-	}
+    toggleFormType = () => {
+        this.setState(prevState => ({
+            newAccountForm: !prevState.newAccountForm
+        }));
+    }
+
+    render() {
+
+        const submitButtonText = this.state.newAccountForm ? "CREATE ACCOUNT" : "LOG IN";
+        const toggleButtonText = this.state.newAccountForm ? "LOG IN" : "CREATE ACCOUNT";
+        const toggleDescription = this.state.newAccountForm ? "Already have an account?" : "New to Declutterly?";
+        const hideReEnterPass = this.state.newAccountForm ? styles.block : styles.hide;
+
+        return (
+            <form className="container">
+            	<div className={styles.inputWrapper}>
+                	<label className={styles.block} htmlFor="username">username: </label>
+                        <input id="username" name="username" type="text" />
+                </div>
+                <div className={styles.inputWrapper}>
+                    <label className={styles.block} htmlFor="password">password: </label>
+                       <input id="password" name="password" type="password" />
+                </div>
+                <div className={`${styles.inputWrapper} ${hideReEnterPass}`} >
+                    <label className={styles.block} htmlFor="rePassword">re-enter password: </label>
+                       <input id="rePassword" name="rePassword" type="password" />
+                </div>
+                    <button type="submit">
+                        {submitButtonText}
+                    </button>
+
+                <div className={styles.toggleWrapper}>
+                    <p>
+                        {toggleDescription}
+                    </p>
+                    <button type="button" onClick={this.toggleFormType}>
+                        {toggleButtonText}
+                    </button>
+                </div>
+            </form>
+        );
+    }
 }
+
+export default Login;
