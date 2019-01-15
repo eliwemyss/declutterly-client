@@ -7,6 +7,7 @@ export default class InventoryForm extends Component {
 		this.state = {
 			item: '',
 			description: '',
+			location: '',
 			category: ''
 		};
 		this.handleChange = this.handleChange.bind(this);
@@ -15,9 +16,7 @@ export default class InventoryForm extends Component {
 
 	handleChange(event) {
 		this.setState({
-			item: event.target.value,
-			description: event.target.value,
-			category: event.target.value
+			[event.target.name]: event.target.value
 		})
 	}
 
@@ -32,17 +31,26 @@ export default class InventoryForm extends Component {
 			<form onSubmit={this.handleSubmit} className="container">
 				<label>
 					Item:
-					<input type="text" name="item" value={this.state.item} onChange={this.handleChange} />
+					<input type="text" name="item" value={this.state.value} onChange={this.handleChange} />
 				</label>
 				<label>
 					Description:
-					<input type="text" name="item" value={this.state.description} onChange={this.handleChange} />
+					<input type="text" name="description" value={this.state.value} onChange={this.handleChange} />
 
 				</label>
 				<label>
-					Category:
-					<input type="text" name="item" value={this.state.category} onChange={this.handleChange} />
+					Location:
+					<input type="text" name="location" value={this.state.value} onChange={this.handleChange} />
+
 				</label>
+					Category:
+					<select type="text" name="category" value={this.state.value} onChange={this.handleChange}>
+						<option>Clothes</option>
+						<option>Books</option>
+						<option>Papers</option>
+						<option>Miscellaneous</option>
+						<option>Sentimental</option>
+					</select>
 				<input type="submit" value="Submit" />
 				<input type="reset" value="Cancel" />
 			</form>

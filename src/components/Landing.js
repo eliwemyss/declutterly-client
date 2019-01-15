@@ -1,11 +1,13 @@
 import React from 'react';
+import NavBar from './NavBar';
+import Hero from './Hero';
 import InfoSection from './Info';
-import Login from './Login';
 
 export default function Landing(){
 		return(
 			<div className="homepage">
-				<Login />
+				<NavBar />
+				<Hero />
 				<InfoSection />
 			</div>
 			)

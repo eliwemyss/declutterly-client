@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './componentStyles/Login.css';
+import NavBar from './NavBar';
 
 class Login extends Component {
     constructor(props) {
@@ -12,7 +13,11 @@ class Login extends Component {
     toggleFormType = () => {
         this.setState(prevState => ({
             newAccountForm: !prevState.newAccountForm
-        }));
+        })); 
+    }
+
+    handleSubmit(event) {
+        event.preventDefault()
     }
 
     render() {
@@ -23,6 +28,9 @@ class Login extends Component {
         const hideReEnterPass = this.state.newAccountForm ? styles.block : styles.hide;
 
         return (
+            <div>
+                <NavBar />
+      
             <form className="container">
             	<div className={styles.inputWrapper}>
                 	<label className={styles.block} htmlFor="username">username: </label>
@@ -49,6 +57,7 @@ class Login extends Component {
                     </button>
                 </div>
             </form>
+        </div>
         );
     }
 }
