@@ -9,6 +9,7 @@
 .col-3 {
   width: 33.3%;
   flex: 1;
+  display: block;
   box-sizing: border-box;
 	float:left;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
@@ -16,6 +17,10 @@
 
 }
 
+.infoIcon {
+  width: 200px;
+  text-align: center;
+}
 .col:first-child { margin-left: 1; }
 
 .table:before,
