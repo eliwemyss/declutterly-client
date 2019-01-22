@@ -1,6 +1,7 @@
 import React from 'react';
 import InventoryForm from './InventoryForm';
 import NavBar from './NavBar';
+import Inventory from './Inventory';
 
 export default class Dashboard extends React.Component {
 	constructor(props) {
@@ -14,6 +15,7 @@ export default class Dashboard extends React.Component {
 			<div>
 				<NavBar />
 				<InventoryForm />
+				<Inventory />
 			</div>
 		)
 	}

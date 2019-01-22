@@ -5,10 +5,11 @@ export default class InventoryForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			item: '',
-			description: '',
-			location: '',
-			category: ''
+			id: props.id,
+			item: props.item,
+			description: props.description,
+			location: props.location,
+			category: props.category
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleChange.bind(this);
@@ -17,12 +18,14 @@ export default class InventoryForm extends Component {
 	handleChange(event) {
 		this.setState({
 			[event.target.name]: event.target.value
+
 		})
+		
 	}
 
 	handleSubmit = (event) => {
 		event.preventDefault();
-		this.props.history.push('/dashboard')
+		console.log("is this?", this)
 	}
 
 
@@ -51,8 +54,8 @@ export default class InventoryForm extends Component {
 						<option>Miscellaneous</option>
 						<option>Sentimental</option>
 					</select>
-				<input type="submit" value="Submit" />
-				<input type="reset" value="Cancel" />
+				<input type="submit" value="Submit" className="button" />
+				<input type="reset" value="Cancel" className="button" />
 			</form>
 			)
 	}
