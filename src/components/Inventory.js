@@ -1,7 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './componentStyles/Inventory.css';
 
-export default class Inventory extends React.Component {
+export class Inventory extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state ={
+
+		}
+	}
 		render() {
 		return(
 		<div className="item container">
@@ -15,3 +22,9 @@ export default class Inventory extends React.Component {
 		)
 	}
 }
+
+const mapStateToProps = state => ({
+	inventory: state
+});
+
+export default connect(mapStateToProps)(Inventory);

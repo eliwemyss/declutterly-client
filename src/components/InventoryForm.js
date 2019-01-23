@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
 import './componentStyles/InventoryForm.css';
 
-export default class InventoryForm extends Component {
+export class InventoryForm extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			id: props.id,
-			item: props.item,
-			description: props.description,
-			location: props.location,
-			category: props.category
+			item: '',
+			description: '',
+			location: '',
+			category: ''
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleSubmit = this.handleChange.bind(this);
@@ -23,9 +24,15 @@ export default class InventoryForm extends Component {
 		
 	}
 
-	handleSubmit = (event) => {
+	handleSubmit(event) {
 		event.preventDefault();
-		console.log("is this?", this)
+		const inventoryObj = {
+			item: this.state.item,
+			description: this.state.description,
+			location: this.state.location,
+			category: this.state.category
+		};
+		this.props.dispatch(inventoryObj);
 	}
 
 
@@ -60,3 +67,6 @@ export default class InventoryForm extends Component {
 			)
 	}
 }
+
+
+export default connect()(InventoryForm);

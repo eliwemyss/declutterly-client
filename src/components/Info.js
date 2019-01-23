@@ -34,3 +34,4 @@ export default class InfoSection extends React.Component {
 		)
 	}
 }
+
