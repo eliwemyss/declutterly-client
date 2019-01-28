@@ -1,6 +1,6 @@
-export const UPDATE_INVENTORY = 'UPDATE_INVENTORY';
+export const ADD_INVENTORY = 'ADD_INVENTORY';
 
-export const updateInventory = inventory => ({
-	type: UPDATE_INVENTORY,
+export const addInventory = inventory => ({
+	type: ADD_INVENTORY,
 	inventory
 });

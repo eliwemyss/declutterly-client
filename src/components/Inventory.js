@@ -8,6 +8,7 @@ export class Inventory extends React.Component {
 		this.state ={
 
 		}
+		console.log(props)
 	}
 		render() {
 		return(
