@@ -8,11 +8,11 @@ export default class NavBar extends React.Component {
 
     return(
       <nav className="navbar">
-        <ul className="nav navbar-nav"> 
+        <div className="navbar-title">Declutterly</div>
+        <div className="nav navbar-nav">                    
+          <Link className="navLink" to="/dashboard">Demo</Link>
           <Link className="navLink" to="/">Home</Link>
-          <Link className="navLink" to="/Login">Login</Link>
-          <Link className="navLink" to="/dashboard">Dashboard</Link>
-        </ul>
+        </div>
     </nav>
     )
   }

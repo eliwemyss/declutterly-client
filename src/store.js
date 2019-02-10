@@ -1,5 +1,11 @@
-import {createStore} from 'redux';
+import { createStore, combineReducers } from 'redux';
 
-import reducer from './reducers/index';
+import { reducer as formReducer } from 'redux-form';
 
-export default createStore(reducer); 
+const store = createStore(
+	combineReducers({
+		form: formReducer
+	})
+	)
+
+export default store;

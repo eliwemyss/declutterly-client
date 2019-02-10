@@ -1,8 +1,8 @@
 .hero-section {
 /*    background: url('hero-img.jpg');
 */    background-repeat: no-repeat;
-    background-size: cover;
-    height: 99vh;
+    background-size: contain;
+    height: 75vh;
     width: 100%;
     text-align: center;
     display: flex;
@@ -15,10 +15,6 @@
       color: black;
       font-size: 80px;
   }
-
-.hero-text {
-    font-size: 20px;
-}
 
 @media only screen and (max-width: 950px) {
     .hero-section {

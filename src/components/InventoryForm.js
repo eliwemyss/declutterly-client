@@ -1,130 +1,109 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
+import { Field, reduxForm, focus } from 'redux-form';
+// import { connect } from 'react-redux';
 import {addInventory} from '../actions/index';
-
+import Input from './Input';
 import './componentStyles/InventoryForm.css';
 
+const required = value =>
+  value || typeof value === "number" ? undefined : "Required";
+
 export class InventoryForm extends React.Component {
-
-  constructor(props) {
-    super(props)
-    this.state = {
-      item: "",
-      description: "",
-      location: "",
-      category: "",
-    }
-    this.handleSubmit = this.handleSubmit.bind(this)
-  }
-
-  handleInput(event, key) {
-    this.setState({
-      [key]: event.target.value
-    })
-  }
-
-
-  handleSubmit(event) {
-    event.preventDefault()
-    const invObj = {
-      item: this.state.item,
-      description: this.state.description,
-      location: this.state.location,
-      category: this.state.category,
-
+  onSubmit(values) {
+    const {
+      item,
+      description,
+      location,
+      decision
+    } = values;
+    const inventory = {
+      item,
+      description,
+      location,
+      decision
     };
-    this.props.dispatch(addInventory(invObj));
-
+    console.log(inventory);
+    var self = this;
+    console.log(this);
+    this.props
+      .dispatch(addInventory(inventory))
+      .then(() => self.props.history.push("/dashboard"));
   }
-
-  clearForm(e){
-    console.log('this event?',e);
-    this.refs.form.reset();
-
-  }
-
-
   render() {
-    console.log('this set state', this.state);
-
-
     return (
-      <div className="inventory add">
-        <form
-          className="container"
-          onSubmit={this.handleSubmit}
-          ref="form"
-        >
-          <h2>Add Inventory </h2>
+      <form
+        className="container"
+        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+      >
+        <label htmlFor="item">Item:</label>
+        <Field
+          component={Input}
+          type="text"
+          name="item"
+          className="item"
+          validate={[required]}
+        />
+        <label htmlFor="description">Description:</label>
+        <Field
+          component={Input}
+          type="text"
+          name="description"
+          className="description"
+          validate={[required]}
+        />
+        <label htmlFor="location">Location:</label>
+        <Field
+          component={Input}
+          type="text"
+          name="location"
+          className="location"
+          validate={[required]}
+        />
 
-          <div className="field">
-            <label>item:</label>
-            <input
-              name="item"
-              type="text"
-              placeholder="T-Shirt"
-              className="input"
-              value={this.state.value}
-              onChange={e => this.handleInput(e, "item")}
-              maxLength="25"
-            />
+        <div className="add-radio-buttons">
+          <div className="radiobutton">
+            <label>
+              Keep
+              <Field
+                name="decision"
+                component={Input}
+                type="radio"
+                value="keep"
+              />
+            </label>
+          </div>
+          <div className="radiobutton">
+            <label>
+              Discard
+              <Field
+                name="decision"
+                component={Input}
+                type="radio"
+                value="discard"
+              />
+            </label>
+          </div>
           </div>
 
-          <div className="field">
-            <label>Description:</label>
-            <input
-              name="description"
-              type="text"
-              placeholder="plain grey"
-              className="input"
-              value={this.state.value}
-              onChange={e => this.handleInput(e, "description")}
-              maxLength="25"
-            />
-          </div>
-
-          <div className="field">
-            <label>Location:</label>
-            <input
-              name="stage"
-              type="text"
-              placeholder="dresser"
-              className="input"
-              value={this.state.value}
-              onChange={e => this.handleInput(e, "location")}
-              maxLength="25"
-            />
-          </div>
-
-				<select name ="category" placeholder="Select Category" type="text" name="category" value={this.state.value} onChange={e =>this.handleInput(e, "category")}>
-						<option>Clothes</option>
-						<option>Books</option>
-						<option>Papers</option>
-						<option>Miscellaneous</option>
-						<option>Sentimental</option>
-					</select>
-
-          <div className="field">
-            <button type="submit" className="updatebtn">
-              Save
-            </button>
-
-            <button
-              className="updatebtn"
-              type="rest"
-              onClick={this.clearForm.bind(this)}
-            >
-              Cancel
-            </button>
-          </div>
-        </form>
-      </div>
+        <button type="submit" className="add-item-form-button">
+          Add new item
+        </button>
+      </form>
     );
   }
 }
 
-const mapStateToProps = state => ({
-  inventory: state,
-});
+export default reduxForm({
+  form: "addInventory",
+  onSubmitFail: (errors, dispatch) =>
+    dispatch(focus("addInventory", Object.keys(errors)[0]))
+})(InventoryForm);
 
-export default connect(mapStateToProps)(InventoryForm);
+
+ //       // <select name ="category" name="category" value={this} onChange={this.props}>
+        //     <option>Clothes</option>
+        //     <option>Books</option>
+        //     <option>Papers</option>
+        //     <option>Miscellaneous</option>
+        //     <option>Sentimental</option>
+        //   </select>
