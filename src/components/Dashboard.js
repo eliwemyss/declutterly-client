@@ -1,20 +1,16 @@
 import React from 'react';
-import InventoryForm from './InventoryForm';
+import { Link } from 'react-router-dom';
 import NavBar from './NavBar';
 import Inventory from './Inventory';
 
 export default class Dashboard extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state={
-
-		}
-	}
 	render() {
 		return (
 			<div>
 				<NavBar />
-				<InventoryForm />
+				<Link className="button-container" to="/addInventory">
+					<button className="add-inventory-button">Add inventory</button>
+				</Link>
 				<Inventory />
 			</div>
 		)

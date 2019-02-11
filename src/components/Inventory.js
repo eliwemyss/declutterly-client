@@ -5,7 +5,7 @@ import './componentStyles/Inventory.css';
 export class Inventory extends React.Component {
 		render() {
 		return(
-		<div className="item container">
+		<div className="item-container">
 			<div>Item: {this.props.item}</div>
 			<div>Description: {this.props.description}</div>
 			<div>Location: {this.props.location}</div>
