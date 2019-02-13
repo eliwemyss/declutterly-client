@@ -8,17 +8,20 @@ const required = value =>
   value || typeof value === "number" ? undefined : "Required";
 
 export class InventoryForm extends React.Component {
+  
   onSubmit(values) {
     const {
       item,
       description,
       location,
+      category,
       decision
     } = values;
     const inventory = {
       item,
       description,
       location,
+      category,
       decision
     };
     console.log(inventory);
@@ -58,7 +61,19 @@ export class InventoryForm extends React.Component {
           className="location"
           validate={[required]}
         />
-
+        <div className="category-select">
+          <Field 
+            component="select"
+            name ="category"
+            >
+              <option>Choose Category</option>
+              <option value="clothes">Clothes</option>
+              <option value="books">Books</option>
+              <option value="papers">Papers</option>
+              <option value="miscellaneous">Miscellaneous</option>
+              <option value="sentimental">Sentimental</option>
+          </Field>
+        </div>
         <div className="add-radio-buttons">
           <div className="radiobutton">
             <label>
@@ -94,15 +109,8 @@ export class InventoryForm extends React.Component {
 
 export default reduxForm({
   form: "add-inventory",
-  onSubmit:(errors, dispatch) =>
+  onSubmitFail:(errors, dispatch) =>
     dispatch(focus("add-inventory", Object.keys(errors)[0]))
 })(InventoryForm);
 
 
- //       // <select name ="category" name="category" value={this} onChange={this.props}>
-        //     <option>Clothes</option>
-        //     <option>Books</option>
-        //     <option>Papers</option>
-        //     <option>Miscellaneous</option>
-        //     <option>Sentimental</option>
-        //   </select>

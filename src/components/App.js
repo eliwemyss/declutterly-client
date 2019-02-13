@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Landing from './Landing';
 import NavBar from './NavBar';
 import Dashboard from './Dashboard';
-import Login from './Login';
 import InventoryForm from './InventoryForm';
 
 export default class App extends Component {
@@ -13,7 +12,6 @@ export default class App extends Component {
           <div>
 
             <Route exact path="/" component={Landing} />
-            <Route exact path="/login" component={Login} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/addInventory" render={() => <div><InventoryForm /><NavBar /></div>} />
           </div>

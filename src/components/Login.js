@@ -1,65 +1,54 @@
-import React, { Component } from 'react';
-import styles from './componentStyles/Login.css';
-import NavBar from './NavBar';
+import React from 'react';
+import {Field, reduxForm, focus} from 'redux-form';
+import Input from './Input';
+import {login} from '../actions/auth';
 
-class Login extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            newAccountForm: false
-        };
-    }
-
-    toggleFormType = () => {
-        this.setState(prevState => ({
-            newAccountForm: !prevState.newAccountForm
-        })); 
-    }
-
-    handleSubmit(event) {
-        event.preventDefault()
+export class LoginForm extends React.Component {
+    onSubmit(values) {
+        let username = values.usernameLogin;
+        let password = values.passwordLogin;
+        return this.props.dispatch(login(username, password));
     }
 
     render() {
-
-        const submitButtonText = this.state.newAccountForm ? "CREATE ACCOUNT" : "LOG IN";
-        const toggleButtonText = this.state.newAccountForm ? "LOG IN" : "CREATE ACCOUNT";
-        const toggleDescription = this.state.newAccountForm ? "Already have an account?" : "New to Declutterly?";
-        const hideReEnterPass = this.state.newAccountForm ? styles.block : styles.hide;
-
+        let error;
+        if (this.props.error) {
+            error = (
+                <div className="form-error" aria-live="polite">
+                    {this.props.error}
+                </div>
+            );
+        }
         return (
-            <div>
-                <NavBar />
-      
-            <form className="container">
-            	<div className={styles.inputWrapper}>
-                	<label className={styles.block} htmlFor="username">username: </label>
-                        <input id="username" name="username" type="text" />
-                </div>
-                <div className={styles.inputWrapper}>
-                    <label className={styles.block} htmlFor="password">password: </label>
-                       <input id="password" name="password" type="password" />
-                </div>
-                <div className={`${styles.inputWrapper} ${hideReEnterPass}`} >
-                    <label className={styles.block} htmlFor="rePassword">re-enter password: </label>
-                       <input id="rePassword" name="rePassword" type="password" />
-                </div>
-                    <button type="submit">
-                        {submitButtonText}
-                    </button>
-
-                <div className={styles.toggleWrapper}>
-                    <p>
-                        {toggleDescription}
-                    </p>
-                    <button type="button" onClick={this.toggleFormType}>
-                        {toggleButtonText}
-                    </button>
-                </div>
+            <form
+                className="container"
+                onSubmit={this.props.handleSubmit(values =>
+                    this.onSubmit(values)
+                )}>
+                {error}
+                <label htmlFor="username">Email:</label>
+                <Field
+                    component={Input}
+                    type="text"
+                    name="usernameLogin"
+                    id="username"
+                />
+                <label htmlFor="password">Password:</label>
+                <Field
+                    component={Input}
+                    type="password"
+                    name="passwordLogin"
+                    id="password"
+                />
+                <button className='sign-in-button' disabled={this.props.pristine || this.props.submitting}>
+                    Log in
+                </button>
             </form>
-        </div>
         );
     }
 }
 
-export default Login;
+export default reduxForm({
+    form: 'login',
+    onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
+})(LoginForm);

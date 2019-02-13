@@ -26,7 +26,7 @@ export const fetchSingleInventoryError = error => ({
 });
 
 export const fetchInventory = (value = "") => (dispatch, getState) => {
-  return fetch(`${API_BASE_URL}/inventory?status=${value}`, {
+  return fetch(`${API_BASE_URL}/inventory?decision=${value}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
