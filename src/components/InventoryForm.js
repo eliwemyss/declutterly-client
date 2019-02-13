@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
-// import { connect } from 'react-redux';
-import {addInventory} from '../actions/index';
+import { addInventory } from '../actions/index';
 import Input from './Input';
 import './componentStyles/InventoryForm.css';
 
@@ -24,12 +23,14 @@ export class InventoryForm extends React.Component {
     };
     console.log(inventory);
     console.log(this);
+    console.log(this.props);
     this.props
       .dispatch(addInventory(inventory))
   }
   render() {
     return (
-      <form
+       
+      <form 
         className="container"
         onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
@@ -92,7 +93,9 @@ export class InventoryForm extends React.Component {
 }
 
 export default reduxForm({
-  form: "addInventory"
+  form: "add-inventory",
+  onSubmit:(errors, dispatch) =>
+    dispatch(focus("add-inventory", Object.keys(errors)[0]))
 })(InventoryForm);
 
 

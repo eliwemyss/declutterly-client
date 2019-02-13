@@ -9,7 +9,7 @@ export default class Dashboard extends React.Component {
 			<div>
 				<NavBar />
 				<Link className="button-container" to="/addInventory">
-					<button className="add-inventory-button">Add inventory</button>
+					<button className="add-inventory-button">+ Add inventory</button>
 				</Link>
 				<Inventory />
 			</div>
