@@ -66,25 +66,30 @@ export const deleteInventory = id => (dispatch, getState) => {
     });
 };
 
+// export const addInventory = inventory => (dispatch, getState) => {
+//   return fetch(`${API_BASE_URL}/inventory`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({
+//       item: inventory.item,
+//       description: inventory.description,
+//       location: inventory.location,
+//       category: inventory.category,
+//       decision: inventory.decision,
+//       id: inventory.id
+//     })
+//   })
+//     .then(data => dispatch(fetchInventory()))
+//     .catch(error => {
+//       dispatch(fetchInventoryError(error));
+//     });
+// };
+
 export const addInventory = inventory => (dispatch, getState) => {
-  return fetch(`${API_BASE_URL}/inventory`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      item: inventory.item,
-      description: inventory.description,
-      location: inventory.location,
-      category: inventory.category,
-      decision: inventory.decision,
-      id: inventory.id
-    })
-  })
-    .then(data => dispatch(fetchInventory()))
-    .catch(error => {
-      dispatch(fetchInventoryError(error));
-    });
+  console.log('action', inventory)
+  dispatch(fetchInventorySuccess(inventory))
 };
 
 export const editInventory = inventory => (dispatch, getState) => {

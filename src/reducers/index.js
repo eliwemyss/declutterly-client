@@ -17,9 +17,9 @@ const initialState = {
   }
 };
 
+
 export default function mainReducer(state = initialState, action) {
-  if (action.type === FETCH_INVENTORY_SUCCESS) {
-    console.log(state)
+  if (action.type === 'FETCH_INVENTORY_SUCCESS') {
     return Object.assign({}, state, {
       inventory: action.data,
       error: null
@@ -38,4 +38,5 @@ export default function mainReducer(state = initialState, action) {
     });
   }
   return state;
+
 }
