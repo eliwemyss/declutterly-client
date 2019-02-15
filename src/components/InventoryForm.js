@@ -24,21 +24,21 @@ export class InventoryForm extends React.Component {
       category,
       decision
     };
-    console.log('inventory', inventory);
-    console.log(this);
-    console.log('inventory form', this.props);
-
-    
+    // console.log(inventory);
+    // console.log(this);
+    // console.log(this.props);
+    // let self = this;
 
     this.props
       .dispatch(addInventory(inventory))
+      // .then(() => self.history.push('/dashboard'))
   }
   render() {
     return (
        
       <form 
         className="container"
-        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+        onSubmit={this.props.handleSubmit(inventory => this.onSubmit(inventory))}
       >
         <label htmlFor="item">Item:</label>
         <Field
@@ -111,7 +111,9 @@ export class InventoryForm extends React.Component {
 }
 
 export default reduxForm({
-  form:'add-inventory'
-})(InventoryForm)
+  form: "add-inventory",
+  onSubmitFail:(errors, dispatch) =>
+    dispatch(focus("add-inventory", Object.keys(errors)[0]))
+})(InventoryForm);
 
 

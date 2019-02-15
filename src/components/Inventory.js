@@ -1,13 +1,18 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './componentStyles/Inventory.css';
+import { fetchInventory } from '../actions/index';
+
 
 export class Inventory extends React.Component {
+	componentDidMount() {
+		this.props.dispatch(fetchInventory(''));
+	}
 		render() {
 		console.log(this.props.inventory.mainReducer.inventoryDetails)
 		return(
 		<div className="item-container">
-			<div>Item: {this.props.inventory.mainReducer.inventoryDetails.item}</div>
+			<div>Item: {this.props.item}</div>
 			<div>Description: {this.props.inventory.mainReducer.inventoryDetails.description}</div>
 			<div>Location: {this.props.location}</div>
 			<div>Decision: {this.props.decision}</div>

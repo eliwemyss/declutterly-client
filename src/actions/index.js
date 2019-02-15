@@ -26,7 +26,7 @@ export const fetchSingleInventoryError = error => ({
 });
 
 export const fetchInventory = (value = "") => (dispatch, getState) => {
-  return fetch(`${API_BASE_URL}/inventory?decision=${value}`, {
+  return fetch(`${API_BASE_URL}/inventory`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -66,31 +66,31 @@ export const deleteInventory = id => (dispatch, getState) => {
     });
 };
 
-// export const addInventory = inventory => (dispatch, getState) => {
-//   return fetch(`${API_BASE_URL}/inventory`, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({
-//       item: inventory.item,
-//       description: inventory.description,
-//       location: inventory.location,
-//       category: inventory.category,
-//       decision: inventory.decision,
-//       id: inventory.id
-//     })
-//   })
-//     .then(data => dispatch(fetchInventory()))
-//     .catch(error => {
-//       dispatch(fetchInventoryError(error));
-//     });
-// };
-
 export const addInventory = inventory => (dispatch, getState) => {
-  console.log('action', inventory)
-  dispatch(fetchInventorySuccess(inventory))
+  return fetch(`${API_BASE_URL}/inventory`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      item: inventory.item,
+      description: inventory.description,
+      location: inventory.location,
+      category: inventory.category,
+      decision: inventory.decision,
+      id: inventory.id
+    })
+  })
+    .then(data => dispatch(fetchInventory()))
+    .catch(error => {
+      dispatch(fetchInventoryError(error));
+    });
 };
+
+// export const addInventory = inventory => (dispatch, getState) => {
+//   console.log('action', inventory)
+//   dispatch(fetchInventorySuccess(inventory))
+// };
 
 export const editInventory = inventory => (dispatch, getState) => {
   return fetch(`${API_BASE_URL}/edit/inventory/${inventory.id}`, {

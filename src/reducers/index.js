@@ -17,7 +17,6 @@ const initialState = {
   }
 };
 
-
 export default function mainReducer(state = initialState, action) {
   if (action.type === 'FETCH_INVENTORY_SUCCESS') {
     return Object.assign({}, state, {
