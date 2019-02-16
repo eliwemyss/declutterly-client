@@ -26,10 +26,12 @@ export const fetchSingleInventoryError = error => ({
 });
 
 export const fetchInventory = (value = "") => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/inventory`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
     }
   })
     .then(res => res.json())
@@ -40,10 +42,12 @@ export const fetchInventory = (value = "") => (dispatch, getState) => {
 };
 
 export const fetchSingleInventoryById = id => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/applications/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
     }
   })
     .then(res => res.json())
@@ -54,10 +58,12 @@ export const fetchSingleInventoryById = id => (dispatch, getState) => {
 };
 
 export const deleteInventory = id => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/inventory/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
     }
   })
     .then(res => dispatch(fetchInventory()))
@@ -67,10 +73,12 @@ export const deleteInventory = id => (dispatch, getState) => {
 };
 
 export const addInventory = inventory => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/inventory`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify({
       item: inventory.item,
@@ -93,10 +101,12 @@ export const addInventory = inventory => (dispatch, getState) => {
 // };
 
 export const editInventory = inventory => (dispatch, getState) => {
+  const authToken = getState().auth.authToken;
   return fetch(`${API_BASE_URL}/edit/inventory/${inventory.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${authToken}`
     },
     body: JSON.stringify(inventory)
   })

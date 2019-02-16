@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './Input';
 import {login} from '../actions/auth';
@@ -7,8 +8,6 @@ export class LoginForm extends React.Component {
     onSubmit(values) {
         let username = values.usernameLogin;
         let password = values.passwordLogin;
-        console.log(this.props)
-        console.log(values)
         return this.props.dispatch(login(username, password));
     }
 
@@ -45,6 +44,7 @@ export class LoginForm extends React.Component {
                 <button className='sign-in-button' disabled={this.props.pristine || this.props.submitting}>
                     Log in
                 </button>
+                <Link className="registration-link" to="/registration">New user?</Link>
             </form>
         );
     }

@@ -1,22 +1,24 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import mainReducer from './reducers/index';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
-// import { setAuthToken, refreshAuthToken } from './actions/auth';
+import { loadAuthToken } from "./local-storage";
+import mainReducer from './reducers/index';
+import authReducer from './reducers/auth'
+import { setAuthToken } from './actions/auth';
 
 const store = createStore(
 	combineReducers({
 		form: formReducer,
-		mainReducer
+		auth: authReducer,
+		protectedData: mainReducer
 	}),
 	applyMiddleware(thunk)
 	);
 
-// const authToken = loadAuthToken();
-// if (authToken) {
-//   const token = authToken;
-//   store.dispatch(setAuthToken(token));
-//   store.dispatch(refreshAuthToken());
-// }
+const authToken = loadAuthToken();
+if (authToken) {
+  const token = authToken;
+  store.dispatch(setAuthToken(token));
+}
 
 export default store;

@@ -24,14 +24,14 @@ export class InventoryForm extends React.Component {
       category,
       decision
     };
-    // console.log(inventory);
-    // console.log(this);
-    // console.log(this.props);
-    // let self = this;
+    console.log(inventory);
+    console.log(this);
+    console.log(this.props);
+    let self = this;
 
     this.props
       .dispatch(addInventory(inventory))
-      // .then(() => self.history.push('/dashboard'))
+      .then(() => self.history.push('/dashboard'))
   }
   render() {
     return (
