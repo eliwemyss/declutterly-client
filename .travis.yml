@@ -1,5 +1,12 @@
- language: node_js
- node_js: node
- cache:
-   directories:
-     - node_modules
+language: node_js
+node_js: node
+cache:
+  directories:
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: DQ3oi8TKFOpNm1TDMjB6hem3L+Ied22vXRb+c3xeHFWN3N5+3SDexhxanEQMWdL/ZkZiMXCvXovABNmMmT8pd01eJE/2nTwsQVu/OPxxvSof6xIuQajp8JqQImT9T53/cpR1+c30UKKqehQcA/9smrUA08qg+m0fdeHZSC/DEjg/9gszNUZdPQaxsgnk21kv4JQ56okv9d/wzWYkVRnKSAqYZF6Q+koDSJhCMPqo9KWiVj6WwnZLgMiCtevowuICKO5aq+MSqx3OSKUqvxV2g82OU2SH3PXWENUrJyKofe2KbE2iFSWjWSXfeL+FQSWasW0CoJyNusyuRwpnS/q2hdSi92CV7sVXNdQ7Ej2EAI6p6NcODHfOwRPTO4zmRmEBRF6SxWy2RhA6qsIDfqMFBrlnRKkyfFi6huhjcAJPgUJc/odR+OLeLR+sBjeqNAg/FZbO0/Jy5mWtczVtM6CXgWaZYLz04jqzRV4GPu/ExE8NihKsZkfAIp4JnSplg5gDCqww1z3r4ULaHrzBC9Os1BGu8MIDbQpABKjFi7p69H5yyjJasQgY9JTr+ZJ5SaKdJv8OY7/T7rvqHaH5ibb+QNS8v3YZisaJKD7zu5wtEKbFqHMLIA0evVlUDm8kl9jsQEHeB9WFlmxjylD0hzba2CjcM5MBVoTG4yoON6Cz6tU=
+  app: declutterly-client
+  on:
+    repo: eliwemyss/declutterly-client
