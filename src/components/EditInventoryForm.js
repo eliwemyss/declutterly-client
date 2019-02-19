@@ -1,13 +1,27 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
-import { addInventory } from '../actions/index';
+import { connect } from 'react-redux';
+import { editInventory } from '../actions/index';
 import Input from './Input';
 import './componentStyles/InventoryForm.css';
 
-const required = value =>
-  value || typeof value === "number" ? undefined : "Required";
 
-export class InventoryForm extends React.Component {
+export class EditInventoryForm extends React.Component {
+
+  componentDidMount() {
+    this.handlInitialize();
+  }
+
+  handlInitialize() {
+    const initData = {
+      item: this.props.inventoryDetails.item,
+      description: this.props.inventoryDetails.description,
+      location: this.props.inventoryDetails.location,
+      category: this.props.inventoryDetails.category,
+      decision: this.props.inventoryDetails.decision
+    };
+    this.prop.initialize(initData);
+  }
   
   onSubmit(values) {
     const {
@@ -24,12 +38,8 @@ export class InventoryForm extends React.Component {
       category,
       decision
     };
-    console.log(inventory);
-    console.log(this);
-    // let self = this;
-
     this.props
-      .dispatch(addInventory(values))
+      .dispatch(editInventory(inventory))
       .then(() => this.props.history.push('/dashboard'))
   }
   render() {
@@ -37,7 +47,7 @@ export class InventoryForm extends React.Component {
        
       <form 
         className="container"
-        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+        onSubmit={this.props.handleSubmit(inventory => this.onSubmit(inventory))}
       >
         <label htmlFor="item">Item:</label>
         <Field
@@ -45,7 +55,6 @@ export class InventoryForm extends React.Component {
           type="text"
           name="item"
           className="item"
-          validate={[required]}
         />
         <label htmlFor="description">Description:</label>
         <Field
@@ -53,7 +62,6 @@ export class InventoryForm extends React.Component {
           type="text"
           name="description"
           className="description"
-          validate={[required]}
         />
         <label htmlFor="location">Location:</label>
         <Field
@@ -61,7 +69,6 @@ export class InventoryForm extends React.Component {
           type="text"
           name="location"
           className="location"
-          validate={[required]}
         />
         <div className="category-select">
           <Field 
@@ -102,7 +109,7 @@ export class InventoryForm extends React.Component {
           </div>
 
         <button type="submit" className="add-item-form-button">
-          Add new item
+          Edit Inventory
         </button>
       </form>
     );
@@ -110,9 +117,9 @@ export class InventoryForm extends React.Component {
 }
 
 export default reduxForm({
-  form: "add-inventory",
+  form: "edit-inventory",
   onSubmitFail:(errors, dispatch) =>
-    dispatch(focus("add-inventory", Object.keys(errors)[0]))
-})(InventoryForm);
+    dispatch(focus("edit-inventory", Object.keys(errors)[0]))
+})(EditInventoryForm);
 
 

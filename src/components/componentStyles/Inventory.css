@@ -7,7 +7,11 @@
     margin-left: 88%;
 }
 
-.item-container{
+.inventory-list {
+    width: 100%;
+}
+
+.item-card{
     background-color: rgb(179, 179, 179, .75);
     border-radius: 5px;
     padding: 20px;

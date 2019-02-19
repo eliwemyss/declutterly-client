@@ -18,6 +18,7 @@
 
 .navLink:hover {
   color: orange;
+  cursor: pointer;
 }
 
 .navbar-title {

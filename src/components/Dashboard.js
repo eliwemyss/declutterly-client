@@ -26,7 +26,7 @@ export class Dashboard extends React.Component {
 					<button className="add-inventory-button">+ Add inventory</button>
 				</Link>
 			</div>
-			<div className="inventory-card">
+			<div className="inventory-list">
 			{data}
 
 			</div>
