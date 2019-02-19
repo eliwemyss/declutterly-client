@@ -43,7 +43,7 @@ export const fetchInventory = (value = "") => (dispatch, getState) => {
 
 export const fetchSingleInventoryById = id => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/applications/${id}`, {
+  return fetch(`${API_BASE_URL}/inventory/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -102,7 +102,7 @@ export const addInventory = inventory => (dispatch, getState) => {
 
 export const editInventory = inventory => (dispatch, getState) => {
   const authToken = getState().auth.authToken;
-  return fetch(`${API_BASE_URL}/edit/inventory/${inventory.id}`, {
+  return fetch(`${API_BASE_URL}/inventory/edit/${inventory.id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",

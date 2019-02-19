@@ -1,6 +1,5 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
-import { connect } from 'react-redux';
 import { editInventory } from '../actions/index';
 import Input from './Input';
 import './componentStyles/InventoryForm.css';
@@ -13,14 +12,15 @@ export class EditInventoryForm extends React.Component {
   }
 
   handlInitialize() {
+    console.log(this.props.inventory.protectedData.inventoryDetails)
     const initData = {
-      item: this.props.inventoryDetails.item,
-      description: this.props.inventoryDetails.description,
-      location: this.props.inventoryDetails.location,
-      category: this.props.inventoryDetails.category,
-      decision: this.props.inventoryDetails.decision
+      item: this.props.inventory.protectedData.inventoryDetails.item,
+      description: this.props.inventory.protectedData.inventoryDetails.description,
+      location: this.props.inventory.protectedData.inventoryDetails.location,
+      category: this.props.inventory.protectedData.inventoryDetails.category,
+      decision: this.props.inventory.protectedData.inventoryDetails.decision
     };
-    this.prop.initialize(initData);
+    this.props.initialize(initData);
   }
   
   onSubmit(values) {
@@ -36,7 +36,8 @@ export class EditInventoryForm extends React.Component {
       description,
       location,
       category,
-      decision
+      decision,
+      id: this.props.inventory.protectedData.inventoryDetails.id
     };
     this.props
       .dispatch(editInventory(inventory))
@@ -47,7 +48,7 @@ export class EditInventoryForm extends React.Component {
        
       <form 
         className="container"
-        onSubmit={this.props.handleSubmit(inventory => this.onSubmit(inventory))}
+        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
       >
         <label htmlFor="item">Item:</label>
         <Field

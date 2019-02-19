@@ -8,7 +8,7 @@ import { fetchSingleInventoryById } from '../actions/index';
 
 export class EditInventory extends React.Component {
 	componentDidMount() {
-		this.props.dispatach(fetchSingleInventoryById(this.props.match.params.id));
+		this.props.dispatch(fetchSingleInventoryById(this.props.match.params.id));
 	}
 
 	render() {
@@ -16,7 +16,7 @@ export class EditInventory extends React.Component {
 		<div>
 			<NavBar />
 			<EditInventoryForm 
-				inventoryDetails={this.props.inventoryDetails}
+				inventory={this.props.inventory}
 				onSubmit={values => this.onSubmit(values)}
 				history={this.props.history}
 				/>
@@ -26,7 +26,7 @@ export class EditInventory extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	inventoryDetails: state.proptectedData.inventoryDetails
+	inventory: state
 });
 
 export default requiresLogin()(connect(mapStateToProps)(EditInventory));

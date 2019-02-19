@@ -14,7 +14,7 @@ export class Inventory extends React.Component {
 			<div>Location: {this.props.location}</div>
 			<div>Category: {this.props.category}</div>
 			<div>Decision: {this.props.decision} </div>
-			<Link to={`/edit/${this.props.id}`}>
+			<Link to={`/inventory/edit/${this.props.id}`}>
 				<button type="submit" className="update button">Update</button>
 			</Link>
 			<button
