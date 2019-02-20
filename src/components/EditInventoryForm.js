@@ -7,18 +7,18 @@ import './componentStyles/InventoryForm.css';
 
 export class EditInventoryForm extends React.Component {
 
-  componentDidMount() {
-    this.handlInitialize();
+  componentDidUpdate() {
+    this.handleInitialize();
   }
 
-  handlInitialize() {
-    console.log(this.props.inventory.protectedData.inventoryDetails)
+  handleInitialize() {
+    console.log('edit details', this.props.inventoryDetails)
     const initData = {
-      item: this.props.inventory.protectedData.inventoryDetails.item,
-      description: this.props.inventory.protectedData.inventoryDetails.description,
-      location: this.props.inventory.protectedData.inventoryDetails.location,
-      category: this.props.inventory.protectedData.inventoryDetails.category,
-      decision: this.props.inventory.protectedData.inventoryDetails.decision
+      item: this.props.inventoryDetails.item,
+      description: this.props.inventoryDetails.description,
+      location: this.props.inventoryDetails.location,
+      category: this.props.inventoryDetails.category,
+      decision: this.props.inventoryDetails.decision
     };
     this.props.initialize(initData);
   }
@@ -37,7 +37,7 @@ export class EditInventoryForm extends React.Component {
       location,
       category,
       decision,
-      id: this.props.inventory.protectedData.inventoryDetails.id
+      id: this.props.inventoryDetails.id
     };
     this.props
       .dispatch(editInventory(inventory))
@@ -119,6 +119,7 @@ export class EditInventoryForm extends React.Component {
 
 export default reduxForm({
   form: "edit-inventory",
+  enableReinitialize: true,
   onSubmitFail:(errors, dispatch) =>
     dispatch(focus("edit-inventory", Object.keys(errors)[0]))
 })(EditInventoryForm);

@@ -29,7 +29,7 @@ export class InventoryForm extends React.Component {
     // let self = this;
 
     this.props
-      .dispatch(addInventory(values))
+      .dispatch(addInventory(inventory))
       .then(() => this.props.history.push('/dashboard'))
   }
   render() {

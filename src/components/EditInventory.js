@@ -16,7 +16,7 @@ export class EditInventory extends React.Component {
 		<div>
 			<NavBar />
 			<EditInventoryForm 
-				inventory={this.props.inventory}
+				inventoryDetails={this.props.inventoryDetails}
 				onSubmit={values => this.onSubmit(values)}
 				history={this.props.history}
 				/>
@@ -26,7 +26,7 @@ export class EditInventory extends React.Component {
 }
 
 const mapStateToProps = state => ({
-	inventory: state
+	inventoryDetails: state.protectedData.inventoryDetails
 });
 
 export default requiresLogin()(connect(mapStateToProps)(EditInventory));

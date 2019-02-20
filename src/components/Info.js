@@ -10,7 +10,7 @@ export default class InfoSection extends React.Component {
 					<img
 					className="infoIcon"
 					alt="trash bin"
-					src={require('./componentStyles/bin.png')} />
+					src={require('./componentStyles/assets/bin.png')} />
 					<div className="infoText">
 					Keep track of all the items you wish to discard in your home.</div>
 				</div>
@@ -18,7 +18,7 @@ export default class InfoSection extends React.Component {
 					<img
 					className="infoIcon"
 					alt="towels"
-					src={require('./componentStyles/towels.png')} />
+					src={require('./componentStyles/assets/towels.png')} />
 					<div className="infoText">
 					Choose whether you would like to keep, donate, or throw away unwanted household items.</div>
 				</div>
@@ -26,7 +26,7 @@ export default class InfoSection extends React.Component {
 					<img
 					className="infoIcon"
 					alt="drying clothes"
-					src={require('./componentStyles/dry.png')} />
+					src={require('./componentStyles/assets/dry.png')} />
 				<div className="infoText">
 					Minimize distractions and start living a more meaningful life free of clutter.</div>
 				</div>

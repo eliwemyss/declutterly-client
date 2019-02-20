@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { reducer as formReducer } from 'redux-form';
 import thunk from 'redux-thunk';
 import { loadAuthToken } from "./local-storage";
-import mainReducer from './reducers/index';
+import protectedDataReducer from './reducers/index';
 import authReducer from './reducers/auth'
 import { setAuthToken } from './actions/auth';
 
@@ -10,7 +10,7 @@ const store = createStore(
 	combineReducers({
 		form: formReducer,
 		auth: authReducer,
-		protectedData: mainReducer
+		protectedData: protectedDataReducer
 	}),
 	applyMiddleware(thunk)
 	);

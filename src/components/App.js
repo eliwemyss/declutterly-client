@@ -16,7 +16,7 @@ export default class App extends Component {
             <Route path ="/registration" render={(props) => <Registration {...props} />}  />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/addInventory" component={AddInventory} />
-            <Route exact path="/inventory/edit/:id" component={EditInventory} />
+            <Route exact path="/edit/:id" component={EditInventory} />
           </div>
         </Router>
       )
