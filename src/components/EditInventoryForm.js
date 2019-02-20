@@ -6,25 +6,6 @@ import './componentStyles/InventoryForm.css';
 
 
 export class EditInventoryForm extends React.Component {
-
-  // componentDidMount() {
-  //   this.handleInitialize();
-  //   console.log('something')
-  //   console.log(this.props)
-  // }
-
-  // handleInitialize() {
-  //   // console.log('edit details', this.props.inventoryDetails)
-  //   const initData = {
-  //     item: this.props.inventoryDetails.item,
-  //     description: this.props.inventoryDetails.description,
-  //     location: this.props.inventoryDetails.location,
-  //     category: this.props.inventoryDetails.category,
-  //     decision: this.props.inventoryDetails.decision
-  //   };
-  //   this.props.initialize(initData);
-  // }
-  
   onSubmit(values) {
     const {
       item,
@@ -48,73 +29,73 @@ export class EditInventoryForm extends React.Component {
   render() {
     return (
        
-      <form 
-        className="container"
-        onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
-      >
-        <label htmlFor="item">Item:</label>
-        <Field
-          component={Input}
-          type="text"
-          name="item"
-          className="item"
-        />
-        <label htmlFor="description">Description:</label>
-        <Field
-          component={Input}
-          type="text"
-          name="description"
-          className="description"
-        />
-        <label htmlFor="location">Location:</label>
-        <Field
-          component={Input}
-          type="text"
-          name="location"
-          className="location"
-        />
-        <div className="category-select">
-          <Field 
-            component="select"
-            name ="category"
-            >
-              <option>Choose Category</option>
-              <option value="clothes">Clothes</option>
-              <option value="books">Books</option>
-              <option value="papers">Papers</option>
-              <option value="miscellaneous">Miscellaneous</option>
-              <option value="sentimental">Sentimental</option>
-          </Field>
+<div className="add-inventory-form">
+          <form 
+            onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}
+          >
+            <label htmlFor="item">Item:</label>
+            <Field
+              component={Input}
+              type="text"
+              name="item"
+              className="item"
+            />
+            <label htmlFor="description">Description:</label>
+            <Field
+              component={Input}
+              type="text"
+              name="description"
+              className="description"
+            />
+            <label htmlFor="location">Location:</label>
+            <Field
+              component={Input}
+              type="text"
+              name="location"
+              className="location"
+            />
+            <div className="category-select">
+              <Field 
+                component="select"
+                name ="category"
+                >
+                  <option>Choose Category</option>
+                  <option value="clothes">Clothes</option>
+                  <option value="books">Books</option>
+                  <option value="papers">Papers</option>
+                  <option value="miscellaneous">Miscellaneous</option>
+                  <option value="sentimental">Sentimental</option>
+              </Field>
+            </div>
+            <div className="add-radio-buttons">
+              <div className="radiobutton">
+                <label>
+                  Keep
+                  <Field
+                    name="decision"
+                    component={Input}
+                    type="radio"
+                    value="keep"
+                  />
+                </label>
+              </div>
+              <div className="radiobutton">
+                <label>
+                  Discard
+                  <Field
+                    name="decision"
+                    component={Input}
+                    type="radio"
+                    value="discard"
+                  />
+                </label>
+              </div>
+              </div>
+          <button type="submit" className="add-item-form-button">
+            Edit Inventory
+          </button>
+        </form>
         </div>
-        <div className="add-radio-buttons">
-          <div className="radiobutton">
-            <label>
-              Keep
-              <Field
-                name="decision"
-                component={Input}
-                type="radio"
-                value="keep"
-              />
-            </label>
-          </div>
-          <div className="radiobutton">
-            <label>
-              Discard
-              <Field
-                name="decision"
-                component={Input}
-                type="radio"
-                value="discard"
-              />
-            </label>
-          </div>
-          </div>
-
-        <button type="submit" className="add-item-form-button">
-          Edit Inventory
-        </button>
-      </form>
     );
   }
 }

@@ -12,7 +12,8 @@
 }
 
 .item-card{
-    background-color: rgb(179, 179, 179, .75);
+    background-color: #342E37;
+    color: #FAFFFD;
     border-radius: 5px;
     padding: 20px;
     width: 66.7%;

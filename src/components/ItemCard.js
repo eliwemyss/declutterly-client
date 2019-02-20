@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { deleteInventory } from '../actions/index';
 import { connect } from 'react-redux';
+import './componentStyles/Inventory.css';
 
 export class ItemCard extends React.Component {
 		render() {
@@ -13,11 +14,11 @@ export class ItemCard extends React.Component {
 			<div>Category: {this.props.category}</div>
 			<div>Decision: {this.props.decision} </div>
 			<Link to={`/edit/${this.props.id}`}>
-				<button type="submit" className="update button">Update</button>
+				<button type="submit" className="update-button">Update</button>
 			</Link>
 			<button
 				onClick={() => {this.props.dispatch(deleteInventory(this.props.id))}}
-			 type="submit" className="delete button">Delete</button>
+			 type="submit" className="delete-button">Delete</button>
 		</div>
 		)
 	}

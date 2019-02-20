@@ -18,7 +18,7 @@ export class Dashboard extends React.Component {
 			<ItemCard {...inventory} key={inventory.id} />
 			));
 		return(
-			<div className="home">
+			<div>
 			<NavBar />
 			<div className="button-container">
 			<Link to="/addInventory">
