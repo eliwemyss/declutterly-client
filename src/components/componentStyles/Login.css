@@ -1,4 +1,4 @@
-.container{
+/*.container{
 	background-color: rgb(179, 179, 179, .75);
     border-radius: 5px;
     padding: 20px;
@@ -15,8 +15,8 @@
     border-radius: 4px;
     cursor: pointer;
     display: block;
-  }
-  input[type=text],[type=password], [type=username] [type=radio] {
+  }*/
+/*  input[type=text],[type=password], [type=username] [type=radio] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -26,19 +26,18 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-  }
+  }*/
 
-.toggleWrapper {
-    margin: 10px auto;
-    width: 75%;
-    border-top: 1px solid black;
-    text-align: center;
+  .login-form {
+    border-radius: 1px solid black;
+    position: fixed;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
+    top: 75px;
+    right: 0;
+    height: 200px;
+    background-color: white;
+    padding: 40px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.block {
-    display: block;
-}
-
-.hide {
-    display: none;
-}

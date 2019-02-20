@@ -7,12 +7,14 @@ import './componentStyles/InventoryForm.css';
 
 export class EditInventoryForm extends React.Component {
 
-  componentDidUpdate() {
+  componentDidMount() {
     this.handleInitialize();
+    console.log('something')
+    console.log(this.props)
   }
 
   handleInitialize() {
-    console.log('edit details', this.props.inventoryDetails)
+    // console.log('edit details', this.props.inventoryDetails)
     const initData = {
       item: this.props.inventoryDetails.item,
       description: this.props.inventoryDetails.description,

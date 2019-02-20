@@ -1,9 +1,9 @@
 import React from 'react';
-import NavBar from './NavBar';
-import Hero from './Hero';
-import InfoSection from './Info';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import Hero from './Hero';
+import InfoSection from './Info';
+
 
 export function Landing(props){
 	if (props.loggedIn){
@@ -12,7 +12,6 @@ export function Landing(props){
 
 	return(
 		<div className="homepage">
-			<NavBar />
 			<Hero />
 			<InfoSection />
 		</div>

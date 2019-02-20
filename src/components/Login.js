@@ -1,8 +1,8 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import {Field, reduxForm, focus} from 'redux-form';
 import Input from './Input';
 import {login} from '../actions/auth';
+import './componentStyles/Login.css';
 
 export class LoginForm extends React.Component {
     onSubmit(values) {
@@ -21,31 +21,31 @@ export class LoginForm extends React.Component {
             );
         }
         return (
-            <form
-                className="container"
-                onSubmit={this.props.handleSubmit(values =>
-                    this.onSubmit(values)
-                )}>
-                {error}
-                <label htmlFor="username">Username:</label>
-                <Field
-                    component={Input}
-                    type="text"
-                    name="usernameLogin"
-                    id="username"
-                />
-                <label htmlFor="password">Password:</label>
-                <Field
-                    component={Input}
-                    type="password"
-                    name="passwordLogin"
-                    id="password"
-                />
-                <button className='sign-in-button' disabled={this.props.pristine || this.props.submitting}>
-                    Log in
-                </button>
-                <Link className="registration-link" to="/registration">New user?</Link>
-            </form>
+            <div className="login-form">
+                <form
+                    onSubmit={this.props.handleSubmit(values =>
+                        this.onSubmit(values)
+                    )}>
+                    {error}
+                    <label htmlFor="username">Username:</label>
+                    <Field
+                        component={Input}
+                        type="text"
+                        name="usernameLogin"
+                        id="username"
+                    />
+                    <label htmlFor="password">Password:</label>
+                    <Field
+                        component={Input}
+                        type="password"
+                        name="passwordLogin"
+                        id="password"
+                    />
+                    <button className='sign-in-button' disabled={this.props.pristine || this.props.submitting}>
+                        Log in
+                    </button>
+                </form>
+            </div>
         );
     }
 }
