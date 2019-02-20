@@ -7,23 +7,23 @@ import './componentStyles/InventoryForm.css';
 
 export class EditInventoryForm extends React.Component {
 
-  componentDidMount() {
-    this.handleInitialize();
-    console.log('something')
-    console.log(this.props)
-  }
+  // componentDidMount() {
+  //   this.handleInitialize();
+  //   console.log('something')
+  //   console.log(this.props)
+  // }
 
-  handleInitialize() {
-    // console.log('edit details', this.props.inventoryDetails)
-    const initData = {
-      item: this.props.inventoryDetails.item,
-      description: this.props.inventoryDetails.description,
-      location: this.props.inventoryDetails.location,
-      category: this.props.inventoryDetails.category,
-      decision: this.props.inventoryDetails.decision
-    };
-    this.props.initialize(initData);
-  }
+  // handleInitialize() {
+  //   // console.log('edit details', this.props.inventoryDetails)
+  //   const initData = {
+  //     item: this.props.inventoryDetails.item,
+  //     description: this.props.inventoryDetails.description,
+  //     location: this.props.inventoryDetails.location,
+  //     category: this.props.inventoryDetails.category,
+  //     decision: this.props.inventoryDetails.decision
+  //   };
+  //   this.props.initialize(initData);
+  // }
   
   onSubmit(values) {
     const {
