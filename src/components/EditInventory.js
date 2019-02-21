@@ -4,7 +4,6 @@ import NavBar from './NavBar';
 import EditInventoryForm from './EditInventoryForm';
 import requiresLogin from './loggedIn';
 import { fetchSingleInventoryById } from '../actions/index';
-// import './componentStyles/Inventory.css';
 
 export class EditInventory extends React.Component {
 	componentDidMount() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import './componentStyles/Info.css';
+import './componentStyles/Landing.css';
 
 export default class InfoSection extends React.Component {
 

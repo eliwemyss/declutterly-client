@@ -8,29 +8,10 @@ const required = value =>
   value || typeof value === "number" ? undefined : "Required";
 
 export class InventoryForm extends React.Component {
-  
-  onSubmit(values) {
-    const {
-      item,
-      description,
-      location,
-      category,
-      decision
-    } = values;
-    const inventory = {
-      item,
-      description,
-      location,
-      category,
-      decision
-    };
-    console.log(inventory);
-    console.log(this);
-    // let self = this;
 
-    this.props
-      .dispatch(addInventory(inventory))
-      .then(() => this.props.history.push('/dashboard'))
+  onSubmit(values) {
+    this.props.dispatch(addInventory(values))
+    this.props.history.push("/dashboard");
   }
   render() {
     return (

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import NavBar from './NavBar';
 import Landing from './Landing';
@@ -8,8 +8,9 @@ import Dashboard from './Dashboard';
 import AddInventory from './AddInventory';
 import EditInventory from './EditInventory';
 import { refreshAuthToken } from '../actions/auth'
+import './componentStyles/App.css'
 
-export default class App extends Component {
+export default class App extends React.Component {
     componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
       this.startPeriodicRefresh();
@@ -43,7 +44,7 @@ export default class App extends Component {
           <div className="app">
             <NavBar />
             <Landing />
-              <Route exact path ="/register" component={RegistrationPage} />
+              <Route path ="/register" render={(props) => <RegistrationPage {...props} />}  />
               <Route exact path="/login" component={Login} />
               <Route exact path="/dashboard" component={Dashboard} />
               <Route path="/addInventory" component={AddInventory} />

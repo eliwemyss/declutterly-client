@@ -1,5 +1,5 @@
 import React from 'react';
-import './componentStyles/Hero.css';
+import './componentStyles/Landing.css';
 
 export default class Hero extends React.Component {
 	render() {

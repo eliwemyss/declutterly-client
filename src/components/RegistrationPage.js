@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import Registration from './Registration';
 
-export function RegistrationPage(props) {
+function RegistrationPage(props) {
 	if (props.loggedIn) {
 		return <Redirect to="/dashboard" />
 	}

@@ -6,6 +6,21 @@ import './componentStyles/InventoryForm.css';
 
 
 export class EditInventoryForm extends React.Component {
+  //   componentDidMount() {
+  //   this.handleInitialize();
+  // }
+
+  // handleInitialize() {
+  //   console.log('edit details', this.props.inventoryDetails)
+  //   const initData = {
+  //     item: this.props.inventoryDetails.item,
+  //     description: this.props.inventoryDetails.description,
+  //     location: this.props.inventoryDetails.location,
+  //     category: this.props.inventoryDetails.category,
+  //     decision: this.props.inventoryDetails.decision
+  //   };
+  //   this.props.initialize(initData);
+  // }
   onSubmit(values) {
     const {
       item,
@@ -27,6 +42,7 @@ export class EditInventoryForm extends React.Component {
       .then(() => this.props.history.push('/dashboard'))
   }
   render() {
+    console.log(this.props.inventoryDetails)
     return (
        
 <div className="add-inventory-form">
@@ -39,6 +55,7 @@ export class EditInventoryForm extends React.Component {
               type="text"
               name="item"
               className="item"
+              value="item"
             />
             <label htmlFor="description">Description:</label>
             <Field

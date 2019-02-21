@@ -2,13 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { deleteInventory } from '../actions/index';
 import { connect } from 'react-redux';
-import './componentStyles/Inventory.css';
+import './componentStyles/Dashboard.css';
 
 export class ItemCard extends React.Component {
 		render() {
 		return(
 		<div className="item-card">
-			<div>Item: {this.props.item} </div>
+			<h2 className="item-title">{this.props.item}</h2>
 			<div>Description: {this.props.description}</div>
 			<div>Location: {this.props.location}</div>
 			<div>Category: {this.props.category}</div>

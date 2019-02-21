@@ -1,3 +1,18 @@
+/*.dashboard-title{
+    margin-top: 100px;
+    text-align: center;
+}*/
+
+.item-title{
+    text-align: center;
+}
+
+.title-container{
+    width: 100%;
+    background-color: #A1E887;
+    height: 10px;
+    color: white;
+}
 .button-container{
     border-radius: 5px;
     padding: 20px;
@@ -6,6 +21,21 @@
     display: block;
     margin-left: 88%;
 }
+
+a{
+    text-decoration: none;
+}
+.add-inventory-button {
+    background-color: #FA824C;
+    border: none;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #FAFFFD;
+  }
 
 .inventory-list {
     width: 100%;
@@ -21,26 +51,12 @@
     display: block;
 }
 
-.add-inventory-button {
-    background-color: #FA824C;
-    border: none;
-    padding: 10px;
-    margin: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px 1px #777;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
-    color: #FAFFFD;
-  }
-
   .update-button, .delete-button {
     background-color: #FA824C;
     border: none;
     padding: 10px;
     margin: 15px;
     border-radius: 5px;
-    box-shadow: 0 0 10px 1px #777;
     font-size: 20px;
     font-weight: bold;
     cursor: pointer;
