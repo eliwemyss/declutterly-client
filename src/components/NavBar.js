@@ -11,7 +11,6 @@ export class NavBar extends React.Component {
     clearAuthToken();
   }
   render() {
-    console.log(this.props)
     let navigation;
     let logOut;
     if (!this.props.loggedIn) {

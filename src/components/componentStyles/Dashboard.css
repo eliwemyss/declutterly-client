@@ -1,18 +1,12 @@
-/*.dashboard-title{
+.dashboard-title{
     margin-top: 100px;
     text-align: center;
-}*/
+}
 
 .item-title{
     text-align: center;
 }
 
-.title-container{
-    width: 100%;
-    background-color: #A1E887;
-    height: 10px;
-    color: white;
-}
 .button-container{
     border-radius: 5px;
     padding: 20px;
@@ -37,9 +31,9 @@ a{
     color: #FAFFFD;
   }
 
-.inventory-list {
+/*.inventory-list {
     width: 100%;
-}
+}*/
 
 .item-card{
     background-color: #342E37;

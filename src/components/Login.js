@@ -13,12 +13,18 @@ export class LoginForm extends React.Component {
 
     render() {
         let error;
+        let loadingMessage;
         if (this.props.error) {
             error = (
                 <div className="form-error" aria-live="polite">
                     {this.props.error}
                 </div>
             );
+        if(this.props.loading) {
+            loadingMessage =(
+            <div className="login-loading">Loading...</div>
+            )
+        }
         }
         return (
             <div className="login-form">
@@ -27,6 +33,7 @@ export class LoginForm extends React.Component {
                         this.onSubmit(values)
                     )}>
                     {error}
+                    {loadingMessage}
                     <label htmlFor="username">Username:</label>
                     <Field
                         component={Input}

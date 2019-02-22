@@ -6,21 +6,21 @@ import './componentStyles/InventoryForm.css';
 
 
 export class EditInventoryForm extends React.Component {
-  //   componentDidMount() {
-  //   this.handleInitialize();
-  // }
+    compnentDidMount() {
+    this.handleInitialize();
+  }
 
-  // handleInitialize() {
-  //   console.log('edit details', this.props.inventoryDetails)
-  //   const initData = {
-  //     item: this.props.inventoryDetails.item,
-  //     description: this.props.inventoryDetails.description,
-  //     location: this.props.inventoryDetails.location,
-  //     category: this.props.inventoryDetails.category,
-  //     decision: this.props.inventoryDetails.decision
-  //   };
-  //   this.props.initialize(initData);
-  // }
+  handleInitialize() {
+    console.log('edit details', this.props.inventoryDetails)
+    const initData = {
+      item: this.props.inventoryDetails.item,
+      description: this.props.inventoryDetails.description,
+      location: this.props.inventoryDetails.location,
+      category: this.props.inventoryDetails.category,
+      decision: this.props.inventoryDetails.decision
+    };
+    this.props.initialize(initData);
+  }
   onSubmit(values) {
     const {
       item,
@@ -77,11 +77,11 @@ export class EditInventoryForm extends React.Component {
                 name ="category"
                 >
                   <option>Choose Category</option>
-                  <option value="clothes">Clothes</option>
-                  <option value="books">Books</option>
-                  <option value="papers">Papers</option>
-                  <option value="miscellaneous">Miscellaneous</option>
-                  <option value="sentimental">Sentimental</option>
+                  <option value="Clothes">Clothes</option>
+                  <option value="Books">Books</option>
+                  <option value="Papers">Papers</option>
+                  <option value="Miscellaneous">Miscellaneous</option>
+                  <option value="Sentimental">Sentimental</option>
               </Field>
             </div>
             <div className="add-radio-buttons">
@@ -92,7 +92,7 @@ export class EditInventoryForm extends React.Component {
                     name="decision"
                     component={Input}
                     type="radio"
-                    value="keep"
+                    value="Keep"
                   />
                 </label>
               </div>
@@ -103,7 +103,7 @@ export class EditInventoryForm extends React.Component {
                     name="decision"
                     component={Input}
                     type="radio"
-                    value="discard"
+                    value="Discard"
                   />
                 </label>
               </div>
@@ -119,7 +119,7 @@ export class EditInventoryForm extends React.Component {
 
 export default reduxForm({
   form: "edit-inventory",
-  enableReinitialize: true,
+  enableReinitialize: false,
   onSubmitFail:(errors, dispatch) =>
     dispatch(focus("edit-inventory", Object.keys(errors)[0]))
 })(EditInventoryForm);

@@ -50,11 +50,11 @@ export class InventoryForm extends React.Component {
                 name ="category"
                 >
                   <option>Choose Category</option>
-                  <option value="clothes">Clothes</option>
-                  <option value="books">Books</option>
-                  <option value="papers">Papers</option>
-                  <option value="miscellaneous">Miscellaneous</option>
-                  <option value="sentimental">Sentimental</option>
+                  <option value="Clothes">Clothes</option>
+                  <option value="Books">Books</option>
+                  <option value="Papers">Papers</option>
+                  <option value="Miscellaneous">Miscellaneous</option>
+                  <option value="Sentimental">Sentimental</option>
               </Field>
             </div>
             <div className="add-radio-buttons">
@@ -65,7 +65,7 @@ export class InventoryForm extends React.Component {
                     name="decision"
                     component={Input}
                     type="radio"
-                    value="keep"
+                    value="Keep"
                   />
                 </label>
               </div>
@@ -76,7 +76,7 @@ export class InventoryForm extends React.Component {
                     name="decision"
                     component={Input}
                     type="radio"
-                    value="discard"
+                    value="Discard"
                   />
                 </label>
               </div>

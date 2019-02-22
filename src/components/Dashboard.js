@@ -21,6 +21,7 @@ export class Dashboard extends React.Component {
 		return(
 			<div>
 			<NavBar />
+			<h2 className="dashboard-title">Inventory</h2>
 			<div className="button-container">
 			<Link to="/addInventory">
 				<button className="add-inventory-button">Add inventory</button>

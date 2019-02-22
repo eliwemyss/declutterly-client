@@ -8,7 +8,7 @@ export class ItemCard extends React.Component {
 		render() {
 		return(
 		<div className="item-card">
-			<h2 className="item-title">{this.props.item}</h2>
+			<h2 className="item-title">Item: {this.props.item}</h2>
 			<div>Description: {this.props.description}</div>
 			<div>Location: {this.props.location}</div>
 			<div>Category: {this.props.category}</div>

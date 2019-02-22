@@ -6,7 +6,7 @@ import requiresLogin from './loggedIn';
 import { fetchSingleInventoryById } from '../actions/index';
 
 export class EditInventory extends React.Component {
-	componentDidMount() {
+	componentWillMount() {
 		this.props.dispatch(fetchSingleInventoryById(this.props.match.params.id));
 	}
 
