@@ -1,5 +1,6 @@
 import React from 'react';
 import {Field, reduxForm, focus} from 'redux-form';
+import {Link} from 'react-router-dom';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import Input from './Input';
@@ -21,6 +22,7 @@ export class Registration extends React.Component {
     render() {
         return (
             <div className="registration-form">
+            <Link className="closed-button" to='/'>X</Link>
                 <form
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
