@@ -32,8 +32,6 @@
 
 .col-3 {
   width: 33.3%;
-  display: flex;
-  flex: 1;
   display: block;
   box-sizing: border-box;
 	float:left;
@@ -42,7 +40,7 @@
 }
 
 .infoIcon {
-  width: 33.3%;
+  width: 50%;
   text-align: center;
 }
 .col:first-child { margin-left: 1; }
@@ -53,17 +51,11 @@
 
 
 @media only screen and (max-width: 480px) {
-	.col {  
-    margin: 1% 0 1% 0%; 
+	.col {  margin: 1% 0 1% 0%; }
+	.left, .middle, .right { width: 100%; }
+  .col-3, .information {
+    width: 100%;
   }
-	.left, .middle, .right{
-    width: 100%; 
-  }
-  .infoIcon {
-  width: 100%%;
-  display: block;
-  text-align: center;
-}
 }
 
 @media only screen and (max-width: 950px) {

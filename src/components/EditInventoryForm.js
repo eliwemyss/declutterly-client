@@ -6,7 +6,7 @@ import './componentStyles/InventoryForm.css';
 
 
 export class EditInventoryForm extends React.Component {
-    compnentDidMount() {
+    compnentDidUpdate() {
     this.handleInitialize();
   }
 
@@ -119,7 +119,7 @@ export class EditInventoryForm extends React.Component {
 
 export default reduxForm({
   form: "edit-inventory",
-  enableReinitialize: false,
+  enableReinitialize: true,
   onSubmitFail:(errors, dispatch) =>
     dispatch(focus("edit-inventory", Object.keys(errors)[0]))
 })(EditInventoryForm);

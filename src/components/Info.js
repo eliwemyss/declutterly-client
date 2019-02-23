@@ -28,7 +28,7 @@ export default class InfoSection extends React.Component {
 					alt="drying clothes"
 					src={require('./componentStyles/assets/dry.png')} />
 				<div className="infoText">
-					Minimize distractions and start living a more meaningful life free of clutter.</div>
+					Minimize distractions and start living a less stressful life free of clutter.</div>
 				</div>
 			</div>
 		)

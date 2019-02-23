@@ -57,4 +57,19 @@ a{
     color: #FAFFFD;
   }
 
+  @media only screen and (max-width: 480px){
+    .item-card {
+        width: 80%;
+        margin: 10px auto auto auto;
+    }
+    .button-container {
+        width: 100%;
+        margin: auto;
+    }
+    .add-inventory-button {
+        width: 90%;
+        margin: auto;
+    }
+  }
+
 

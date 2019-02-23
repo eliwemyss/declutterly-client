@@ -51,3 +51,9 @@
   .radiobutton {
     padding: 15px;
   }
+
+  @media only screen and (max-width: 480px) {
+    .add-inventory-form {
+      width: 80%;
+    }
+  }
