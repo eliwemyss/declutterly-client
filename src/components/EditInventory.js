@@ -6,7 +6,7 @@ import requiresLogin from './loggedIn';
 import { fetchSingleInventoryById } from '../actions/index';
 
 export class EditInventory extends React.Component {
-	componentDidMount() {
+	componentWillMount() {
 		this.props.dispatch(fetchSingleInventoryById(this.props.match.params.id));
 	}
 
@@ -15,7 +15,7 @@ export class EditInventory extends React.Component {
 		<div>
 			<NavBar />
 			<EditInventoryForm 
-				inventoryDetails={this.props.inventoryDetails}
+				initialValues={this.props.inventoryDetails}
 				onSubmit={values => this.onSubmit(values)}
 				history={this.props.history}
 				/>

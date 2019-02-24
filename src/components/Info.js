@@ -5,7 +5,8 @@ export default class InfoSection extends React.Component {
 
 	render() {
 		return (
-			<div className="information table">
+			<div className="information">
+
 				<div className="col-3">
 					<img
 					className="infoIcon"
@@ -20,7 +21,7 @@ export default class InfoSection extends React.Component {
 					alt="towels"
 					src={require('./componentStyles/assets/towels.png')} />
 					<div className="infoText">
-					Choose whether you would like to keep, donate, or throw away unwanted household items.</div>
+					Choose whether you would like to keep or throw away unwanted household items.</div>
 				</div>
 				<div className="col-3">
 					<img

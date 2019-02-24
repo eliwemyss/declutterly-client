@@ -6,21 +6,7 @@ import './componentStyles/InventoryForm.css';
 
 
 export class EditInventoryForm extends React.Component {
-    compnentDidUpdate() {
-    this.handleInitialize();
-  }
 
-  handleInitialize() {
-    console.log('edit details', this.props.inventoryDetails)
-    const initData = {
-      item: this.props.inventoryDetails.item,
-      description: this.props.inventoryDetails.description,
-      location: this.props.inventoryDetails.location,
-      category: this.props.inventoryDetails.category,
-      decision: this.props.inventoryDetails.decision
-    };
-    this.props.initialize(initData);
-  }
   onSubmit(values) {
     const {
       item,
@@ -35,14 +21,14 @@ export class EditInventoryForm extends React.Component {
       location,
       category,
       decision,
-      id: this.props.inventoryDetails.id
+      id: this.props.initialValues.id
     };
     this.props
       .dispatch(editInventory(inventory))
       .then(() => this.props.history.push('/dashboard'))
   }
   render() {
-    console.log(this.props.inventoryDetails)
+    console.log(this.props)
     return (
        
 <div className="add-inventory-form">

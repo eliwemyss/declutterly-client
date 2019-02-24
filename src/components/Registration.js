@@ -22,7 +22,9 @@ export class Registration extends React.Component {
     render() {
         return (
             <div className="registration-form">
-            <Link className="closed-button" to='/'>X</Link>
+            <Link to='/'>
+                <button className="close-button">Close</button>
+            </Link>
                 <form
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)

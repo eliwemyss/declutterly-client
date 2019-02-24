@@ -15,6 +15,7 @@ export class LoginForm extends React.Component {
     render() {
         let error;
         let loadingMessage;
+        console.log(this.state)
         if (this.props.error) {
             error = (
                 <div className="form-error" aria-live="polite">
@@ -30,7 +31,9 @@ export class LoginForm extends React.Component {
         return (
 
             <div className="login-form">
-            <Link className="closed-button" to='/'>X</Link>
+            <Link to='/'>
+                <button className="close-button">Close</button>
+            </Link>
                 <form
                     onSubmit={this.props.handleSubmit(values =>
                         this.onSubmit(values)
