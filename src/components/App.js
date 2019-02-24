@@ -45,10 +45,10 @@ export default class App extends React.Component {
             <NavBar />
             <Landing />
               <Route path ="/register" render={(props) => <RegistrationPage {...props} />}  />
-              <Route exact path="/login" component={Login} />
-              <Route exact path="/dashboard" component={Dashboard} />
-              <Route path="/addInventory" component={AddInventory} />
-              <Route exact path="/edit/:id" component={EditInventory} />
+              <Route exact path="/login" render={(props) => <Login {...props} />} />
+              <Route exact path="/dashboard" render={(props) => <Dashboard {...props} />} />
+              <Route path="/addInventory" render={(props) => <AddInventory {...props} />} />
+              <Route exact path="/edit/:id" render={(props) => <EditInventory {...props} />} />
           </div>
         </Router>
       )

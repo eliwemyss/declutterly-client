@@ -25,7 +25,7 @@ export default function reducer(state = initialState, action) {
     });
   } else if (
     action.type === FETCH_INVENTORY_SUCCESS ||
-    action.type === FETCH_SINGLE_INVENTORY_ERROR
+    action.type === FETCH_SINGLE_INVENTORY_ERROR || action.type === FETCH_INVENTORY_ERROR
   ) {
     return Object.assign({}, state, {
       error: action.error
