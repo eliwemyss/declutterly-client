@@ -1,6 +1,7 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
 import { editInventory } from '../actions/index';
+import { Link } from 'react-router-dom';
 import Input from './Input';
 import './componentStyles/InventoryForm.css';
 
@@ -28,7 +29,6 @@ export class EditInventoryForm extends React.Component {
       .then(() => this.props.history.push('/dashboard'))
   }
   render() {
-    console.log(this.props)
     return (
        
 <div className="add-inventory-form">
@@ -94,6 +94,9 @@ export class EditInventoryForm extends React.Component {
                 </label>
               </div>
               </div>
+          <Link to="/dashboard">
+            <button type="submit" className="back-button">Back</button>
+          </Link>
           <button type="submit" className="add-item-form-button">
             Edit Inventory
           </button>

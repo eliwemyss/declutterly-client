@@ -7,11 +7,11 @@
     margin: 125px auto 25px auto;
     display: block;
   }
-  .add-item-form-button {
+  .add-item-form-button, .back-button {
     background-color: #FA824C;
     border: none;
     padding: 10px;
-    margin: auto;
+    margin: auto auto 10px auto;
     width: 100%;
     border-radius: 5px;
     box-shadow: 0 0 10px 1px #777;

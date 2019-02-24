@@ -1,5 +1,6 @@
 import React from 'react';
 import { Field, reduxForm, focus } from 'redux-form';
+import { Link } from 'react-router-dom';
 import { addInventory } from '../actions/index';
 import Input from './Input';
 import './componentStyles/InventoryForm.css';
@@ -81,6 +82,9 @@ export class InventoryForm extends React.Component {
                 </label>
               </div>
               </div>
+          <Link to="/dashboard">
+            <button type="submit" className="back-button">Back</button>
+          </Link>
           <button type="submit" className="add-item-form-button">
             Add new item
           </button>
