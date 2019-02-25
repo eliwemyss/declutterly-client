@@ -22,7 +22,7 @@ This app allows users to list items in their household and decide whether to kee
 
 #### Add Inventory
 
-![add inventory](screenshots/add-itm.png "add item screenshot")
+![add inventory](screenshots/add-item.png "add item screenshot")
 
 ## Technical:
 ### Front-End: 
