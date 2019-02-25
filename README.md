@@ -14,14 +14,15 @@ This app allows users to list items in their household and decide whether to kee
 
 #### Landing
 
+![landing](screenshots/landing.png "landing page screenshot")
 
 #### Dashboard
 
+![dashboard](screenshots/dashboard.png "dashboard screenshot")
 
 #### Add Inventory
 
-
-#### Edit Inventory
+![add inventory](screenshots/add-itm.png "add item screenshot")
 
 ## Technical:
 ### Front-End: 
