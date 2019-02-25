@@ -13,7 +13,7 @@ export default class InfoSection extends React.Component {
 					alt="trash bin"
 					src={require('./componentStyles/assets/bin.png')} />
 					<div className="infoText">
-					Keep track of all the items you wish to discard in your home.</div>
+					Keep track of all the items in your home.</div>
 				</div>
 				<div className="col-3">
 					<img
@@ -21,7 +21,7 @@ export default class InfoSection extends React.Component {
 					alt="towels"
 					src={require('./componentStyles/assets/towels.png')} />
 					<div className="infoText">
-					Choose whether you would like to keep or throw away unwanted household items.</div>
+					Choose whether you would like to keep or throw away household items.</div>
 				</div>
 				<div className="col-3">
 					<img

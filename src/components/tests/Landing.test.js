@@ -1,16 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../App';
 import {shallow} from 'enzyme';
-import configure from '../../setupTests';
-import store from '../../store';
 import {Provider} from 'react-redux';
+import store from '../../store';
+import configure from '../../setupTests';
+import Landing from '../Landing';
 
-describe('App', () => {
+
+
+describe('Landing', () => {
   it('Renders without crashing', () => {
     shallow(
       	<Provider store={store}>
-      		<App />
+      		<Landing />
     	</Provider>
     )
   });

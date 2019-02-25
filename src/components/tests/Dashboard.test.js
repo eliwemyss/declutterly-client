@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '../App';
+import Dashboard from '../Dashboard';
 import {shallow} from 'enzyme';
-import configure from '../../setupTests';
+import configure from '../../setupTests'
 import store from '../../store';
 import {Provider} from 'react-redux';
 
-describe('App', () => {
+describe('Dashboard', () => {
   it('Renders without crashing', () => {
     shallow(
-      	<Provider store={store}>
-      		<App />
-    	</Provider>
+    	<Provider store={store}>
+      		<Dashboard />
+   		</Provider>
     )
   });
 });
