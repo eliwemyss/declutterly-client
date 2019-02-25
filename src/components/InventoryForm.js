@@ -82,12 +82,13 @@ export class InventoryForm extends React.Component {
                 </label>
               </div>
               </div>
-          <Link to="/dashboard">
-            <button type="submit" className="back-button">Back</button>
+              <button type="submit" className="add-item-form-button">
+                Add new item
+              </button>
+            <Link to="/dashboard">
+              <button type="submit" className="back-button">Back</button>
           </Link>
-          <button type="submit" className="add-item-form-button">
-            Add new item
-          </button>
+
         </form>
         </div>
     );

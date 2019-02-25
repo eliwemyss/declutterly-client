@@ -94,13 +94,13 @@ export class EditInventoryForm extends React.Component {
                 </label>
               </div>
               </div>
-          <Link to="/dashboard">
-            <button type="submit" className="back-button">Back</button>
-          </Link>
-          <button type="submit" className="add-item-form-button">
-            Edit Inventory
-          </button>
-        </form>
+              <button type="submit" className="add-item-form-button">
+              Edit Inventory
+              </button>
+              <Link to="/dashboard">
+                <button type="submit" className="back-button">Back</button>
+              </Link>
+          </form>
         </div>
     );
   }
