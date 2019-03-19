@@ -16,8 +16,8 @@ export class NavBar extends React.Component {
     if (!this.props.loggedIn) {
       navigation = 
         <div>
+        <Link className="navLink register" to="/register">Register</Link>
           <Link className="navLink login" to="/login">Login</Link>
-          <Link className="navLink register" to="/register">Register</Link>
         </div>
     } else{logOut = <Link className="navLink" to="/" onClick={() => this.logOut()}>Log out</Link>
   }
